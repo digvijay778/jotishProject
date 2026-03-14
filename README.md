@@ -14,7 +14,7 @@ This assignment tests deep engineering knowledge:
 
 ---
 
-## 🐛 Intentional Bug Documentation
+## ðŸ› Intentional Bug Documentation
 
 ### Bug Description
 There is an **intentional stale closure bug** in the signature canvas event listeners in `src/pages/DetailsPage.jsx`.
@@ -81,12 +81,12 @@ useEffect(() => {
 ```
 
 ### Why I Chose This Bug
-- ✅ Subtle and realistic (many devs encounter closure issues)
-- ✅ React-specific (relates to rendering lifecycle + closure captures)
-- ✅ Present in actual codebase (not contrived)
-- ✅ Doesn't break the app (which is why it's hard to catch)
-- ✅ Educational (teaches proper ref + effect patterns)
-- ✅ Interview-worthy (shows awareness of closure scoping)
+- âœ… Subtle and realistic (many devs encounter closure issues)
+- âœ… React-specific (relates to rendering lifecycle + closure captures)
+- âœ… Present in actual codebase (not contrived)
+- âœ… Doesn't break the app (which is why it's hard to catch)
+- âœ… Educational (teaches proper ref + effect patterns)
+- âœ… Interview-worthy (shows awareness of closure scoping)
 
 ---
 
@@ -95,44 +95,44 @@ useEffect(() => {
 ### Project Structure
 ```
 src/
-├── contexts/
-│   ├── AuthContext.jsx       # Auth state + localStorage persistence
-│   └── ProtectedRoute.jsx    # Route protection middleware
-├── pages/
-│   ├── LoginPage.jsx         # Authentication form
-│   ├── ListPage.jsx          # Virtualized employee grid
-│   ├── DetailsPage.jsx       # Camera + Signature capture + Merge
-│   └── AnalyticsPage.jsx     # SVG charts + geospatial map
-├── utils/
-│   ├── virtualizationMath.js # Virtual scroll calculations
-│   └── imageMerging.js       # Canvas image merging algorithm
-├── css/                      # Pure CSS3 (Flexbox/Grid, no frameworks)
-└── App.jsx                   # Main routing component
+â”œâ”€â”€ contexts/
+â”‚   â”œâ”€â”€ AuthContext.jsx       # Auth state + localStorage persistence
+â”‚   â””â”€â”€ ProtectedRoute.jsx    # Route protection middleware
+â”œâ”€â”€ pages/
+â”‚   â”œâ”€â”€ LoginPage.jsx         # Authentication form
+â”‚   â”œâ”€â”€ ListPage.jsx          # Virtualized employee grid
+â”‚   â”œâ”€â”€ DetailsPage.jsx       # Camera + Signature capture + Merge
+â”‚   â””â”€â”€ AnalyticsPage.jsx     # SVG charts + geospatial map
+â”œâ”€â”€ utils/
+â”‚   â”œâ”€â”€ virtualizationMath.js # Virtual scroll calculations
+â”‚   â””â”€â”€ imageMerging.js       # Canvas image merging algorithm
+â”œâ”€â”€ css/                      # Pure CSS3 (Flexbox/Grid, no frameworks)
+â””â”€â”€ App.jsx                   # Main routing component
 ```
 
 ### Data Flow
 ```
 Login (public)
-  ↓ login() with credentials
-  ↓ save to localStorage
-  ↓ update AuthContext
-  ↓
+  â†“ login() with credentials
+  â†“ save to localStorage
+  â†“ update AuthContext
+  â†“
 Protected Routes (check isAuthenticated)
-  ↓
+  â†“
 ListPage (virtualized grid)
-  ↓ click employee
-  ↓
+  â†“ click employee
+  â†“
 DetailsPage (camera + signature)
-  ↓ capturePhoto() + drawSignature()
-  ↓ mergePhotosWithSignature()
-  ↓
+  â†“ capturePhoto() + drawSignature()
+  â†“ mergePhotosWithSignature()
+  â†“
 AnalyticsPage (SVG charts)
-  ↓ displayResults()
+  â†“ displayResults()
 ```
 
 ---
 
-## 📊 Technical Deep Dives
+## ðŸ“Š Technical Deep Dives
 
 ### 1. Custom Virtualization Algorithm
 
@@ -218,11 +218,11 @@ const base64 = mergedCanvas.toDataURL('image/jpeg', 0.9);
 ```
 
 **Why Canvas?**
-- ✅ Native browser API (no dependencies)
-- ✅ Full control over layout
-- ✅ Can add text/borders/metadata
-- ✅ Fast and lightweight
-- ✅ Supports download/transmission
+- âœ… Native browser API (no dependencies)
+- âœ… Full control over layout
+- âœ… Can add text/borders/metadata
+- âœ… Fast and lightweight
+- âœ… Supports download/transmission
 
 ---
 
@@ -309,29 +309,29 @@ All charts use raw SVG `<rect>`, `<circle>`, and `<text>` elements. No Chart.js 
 ## Features Breakdown
 
 ### A. Secure Authentication
-- ✅ Form validation
-- ✅ localStorage persistence
-- ✅ Protected routes
-- ✅ Credentials: `testuser` / `Test123`
+- âœ… Form validation
+- âœ… localStorage persistence
+- âœ… Protected routes
+- âœ… Credentials: `testuser` / `Test123`
 
 ### B. High-Performance Grid
-- ✅ Custom virtualization (no external library)
-- ✅ Only visible rows rendered
-- ✅ Smooth 60 FPS scrolling
-- ✅ Fetches from API endpoint
+- âœ… Custom virtualization (no external library)
+- âœ… Only visible rows rendered
+- âœ… Smooth 60 FPS scrolling
+- âœ… Fetches from API endpoint
 
 ### C. Identity Verification
-- ✅ Camera API integration
-- ✅ Canvas signature capture (mouse + touch)
-- ✅ Image merging algorithm
-- ✅ JPEG export with timestamp
+- âœ… Camera API integration
+- âœ… Canvas signature capture (mouse + touch)
+- âœ… Image merging algorithm
+- âœ… JPEG export with timestamp
 
 ### D. Data Visualization
-- ✅ Bar chart (employee distribution)
-- ✅ Bubble chart (salary statistics)
-- ✅ City details table
-- ✅ Geospatial map
-- ✅ Pure SVG (no libraries)
+- âœ… Bar chart (employee distribution)
+- âœ… Bubble chart (salary statistics)
+- âœ… City details table
+- âœ… Geospatial map
+- âœ… Pure SVG (no libraries)
 
 ---
 
@@ -378,7 +378,7 @@ npm run build
 
 | Technique | Result |
 |-----------|--------|
-| Virtual Scrolling | 10,000 rows → 20 DOM nodes |
+| Virtual Scrolling | 10,000 rows â†’ 20 DOM nodes |
 | Canvas Merging | Off-DOM computation |
 | useCallback | Prevent unnecessary renders |
 | CSS Transforms | GPU-accelerated positions |
@@ -390,11 +390,11 @@ npm run build
 
 | Browser | Support | Notes |
 |---------|---------|-------|
-| Chrome | ✅ Full | Recommended |
-| Firefox | ✅ Full | Works great |
-| Safari | ⚠️ Partial | Needs HTTPS for camera |
-| Edge | ✅ Full | Chromium-based |
-| IE 11 | ❌ None | Not supported |
+| Chrome | âœ… Full | Recommended |
+| Firefox | âœ… Full | Works great |
+| Safari | âš ï¸ Partial | Needs HTTPS for camera |
+| Edge | âœ… Full | Chromium-based |
+| IE 11 | âŒ None | Not supported |
 
 ---
 
@@ -442,5 +442,3 @@ This project demonstrates:
 **Status**: Production-Ready Demo  
 **React Version**: 18.x  
 **Last Updated**: March 2026
-#   j o t i s h   P r o j e c t  
- 
